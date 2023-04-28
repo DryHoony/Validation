@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ItemServiceApplication {
-	// 커밋 Test
+	// 커밋 Test2
 
 	public static void main(String[] args) {
 		SpringApplication.run(ItemServiceApplication.class, args);
