@@ -20,6 +20,7 @@ public class BeanValidationTest {
         item.setItemName(" "); //공백
         item.setPrice(0);
         item.setQuantity(10000);
+        // 셋 다 오류발생 확인
 
         Set<ConstraintViolation<Item>> violations = validator.validate(item);
         for (ConstraintViolation<Item> violation : violations) {

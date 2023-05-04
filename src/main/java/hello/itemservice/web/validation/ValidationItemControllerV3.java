@@ -45,7 +45,7 @@ public class ValidationItemControllerV3 {
     }
 
 //    @PostMapping("/add")
-    public String addItem(@Validated @ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+    public String addItem(@Validated @ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         //특정 필드가 아닌 복합 룰 검증
         if (item.getPrice() != null && item.getQuantity() != null) {
@@ -78,6 +78,7 @@ public class ValidationItemControllerV3 {
                 bindingResult.reject("totalPriceMin", new Object[]{10000, resultPrice}, null);
             }
         }
+
 
         //검증에 실패하면 다시 입력 폼으로
         if (bindingResult.hasErrors()) {

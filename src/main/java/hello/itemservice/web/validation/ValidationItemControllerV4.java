@@ -62,7 +62,7 @@ public class ValidationItemControllerV4 {
             return "validation/v4/addForm";
         }
 
-        //성공 로직
+        //성공 로직 - ItemSaveForm 을 받은 다음 Item 을 만들어 넘겨야 한다
         Item item = new Item();
         item.setItemName(form.getItemName());
         item.setPrice(form.getPrice());

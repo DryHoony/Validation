@@ -49,7 +49,7 @@ public class ValidationItemControllerV1 {
         Map<String, String> errors = new HashMap<>();
 
         //검증 로직
-        if (!StringUtils.hasText(item.getItemName())) {
+        if (!StringUtils.hasText(item.getItemName())) { // 글자가 있냐?
             errors.put("itemName", "상품 이름은 필수입니다.");
         }
         if (item.getPrice() == null || item.getPrice() < 1000 || item.getPrice() > 1000000) {
@@ -68,7 +68,7 @@ public class ValidationItemControllerV1 {
         }
 
         //검증에 실패하면 다시 입력 폼으로
-        if (!errors.isEmpty()) {
+        if (!errors.isEmpty()) { // 에러가 Empty 가 아니면 = 에러가 있으면, 부정의 부정,,
             log.info("errors = {} ", errors);
             model.addAttribute("errors", errors);
             return "validation/v1/addForm";
